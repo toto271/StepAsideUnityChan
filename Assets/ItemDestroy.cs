@@ -12,18 +12,16 @@ public class ItemDestroy : MonoBehaviour
     void Start()
     {
         this.unitychan = GameObject.Find("unitychan");
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
-      
-    }
-    void OnBecameInvisible()
+    if (this.transform.position.z < this.unitychan.transform.position.z)
     {
-        if (this.transform.position.z < this.unitychan.transform.position.z)
-        {
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
+    }
     }
 }
